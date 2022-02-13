@@ -54,6 +54,8 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell") as! MovieCell //cast it as MovieCell
         
+        
+        
         let movie = movies[indexPath.row] //gets the dictionary at this index
         let title = movie["title"] as! String //get movie title, the as! String is cast to a String, we know it's a string too
         let synopsis = movie["overview"] as! String
@@ -66,19 +68,35 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         let posterUrl = URL(string: baseUrl + posterPath)
         cell.posterView.af.setImage(withURL: posterUrl!)
         
+        print(movie)
+        
         return cell
     }
 
-    
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        // Find the selected movie
+        // the 'sender' is actually the cell
+        // that was tapped on so
+        let cell = sender as! UITableViewCell
+        //find the index path for this particular cell
+        let indexPath = tableView.indexPath(for: cell)!
+        let movie = movies[indexPath.row]
+        
+        //Pass the selected movie to the MovieDetailsViewController
+        // segue - "knows" where it's going apparently?
+        let detailsViewController = segue.destination as! MovieDetailsViewController
+        //have the MovieDetailsViewController variable movie
+        //equal to the movie variable here
+        detailsViewController.movie = movie
+        
+        //final clean up touch, this will deselect the selected cell
+        //when user navigates back to this screen
+        tableView.deselectRow(at: indexPath, animated: true)
     }
-    */
-
 }
