@@ -189,6 +189,7 @@
                                         <size key="customSize" width="200" height="250"/>
                                         <connections>
                                             <outlet property="posterView" destination="fgg-iO-Kou" id="czU-mu-Dbo"/>
+                                            <segue destination="yEy-Da-1YR" kind="show" id="3SC-aD-Zjz"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -205,6 +206,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KvN-YJ-JrQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="379.71014492753625" y="466.74107142857139"/>
+        </scene>
+        <!--Hero Details View Controller-->
+        <scene sceneID="PBl-6l-3Oa">
+            <objects>
+                <viewController id="yEy-Da-1YR" customClass="HeroDetailsViewController" customModule="FlixPartOne" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C3t-dK-RLy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oo1-x5-1xo">
+                                <rect key="frame" x="49" y="166" width="310" height="209"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJX-aD-1Mb">
+                                <rect key="frame" x="49" y="438" width="310" height="234"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uG9-5m-Ro6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="AhC-95-r1k"/>
+                    <connections>
+                        <outlet property="posterView" destination="oo1-x5-1xo" id="4Vm-mW-Rav"/>
+                        <outlet property="synopsisLabel" destination="lJX-aD-1Mb" id="qxr-2W-aJp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jjN-sX-Z0z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="379.71014492753625" y="1185.9375"/>
         </scene>
         <!--SuperHero-->
         <scene sceneID="GnS-I8-Rsw">
